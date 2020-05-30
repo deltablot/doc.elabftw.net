@@ -14,7 +14,8 @@ WORKDIR /home/node/elabdoc
 RUN yarn install && ./node_modules/.bin/grunt && mv doc/_build/html /home/node/build/doc && rm -r node_modules
 
 # API BUILD
-RUN git clone --depth 1 https://github.com/elabftw/elabftw /home/node/elabftw
+# TODO remove apidoc branch when 0.23.0 is out
+RUN git clone -b apidoc --depth 1 https://github.com/elabftw/elabftw /home/node/elabftw
 
 WORKDIR /home/node/elabftw
 
